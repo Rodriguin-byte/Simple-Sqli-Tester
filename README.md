@@ -1,73 +1,45 @@
-# SQL Injection Scanner TOOL
-Version: 1.0
+#  Simple Sqli Tester
 
-Language: Python 3.6+
+[![Python Version](https://img.shields.io/badge/python-3.6%2B-blue)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)](CONTRIBUTING.md)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/seu-usuario/sql-injection-tester/graphs/commit-activity)
 
-Features: Error-based, Time-based, and Union-based detection
+Uma ferramenta especializada em testar vulnerabilidades de SQL Injection, desenvolvida para fins educacionais e testes de penetração autorizados.
 
-# LEGAL DISCLAIMER
-THIS TOOL IS FOR EDUCATIONAL PURPOSES AND AUTHORIZED PENETRATION TESTING ONLY.
+##  Sobre o Projeto
 
-Testing targets without explicit written consent is illegal and may lead to criminal charges. The developer assumes no liability for misuse or damage caused by this program.
+O SQL Injection Tester é uma ferramenta focada exclusivamente na deteção e exploração de vulnerabilidades de injeção SQL. Inspirada em ferramentas profissionais como sqlmap, esta ferramenta foi desenvolvida para ser **educacional, precisa e fácil de usar**, permitindo compreender profundamente como diferentes tipos de SQL Injection funcionam.
 
-# SETUP - PREREQUISITES
-To ensure the script functions correctly, you must have:
+###  Funcionalidades Principais
 
-Python 3.6 or higher installed.
+| Tipo | Descrição | Características |
+|------|-----------|-----------------|
+|  **Error-Based** | Deteção baseada em mensagens de erro da base de dados | Suporte para MySQL, MSSQL, PostgreSQL, Oracle, SQLite |
+|  **Time-Based Blind** | Injeção cega baseada em delays | Testes com SLEEP(), WAITFOR DELAY, pg_sleep() |
+|  **Union-Based** | Extração de dados usando UNION | Descoberta de colunas, extração de versão e tabelas |
+|  **Boolean-Based Blind** | Injeção cega baseada em verdadeiro/falso | Testes condicionais com AND/OR |
 
-An active internet connection (to reach targets).
+###  Bases de Dados Suportadas
 
-Terminal support for ANSI colors (standard in Linux/macOS; Windows may require modern Terminal).
+| Database | Error Patterns | Time Functions | Union Support |
+|----------|---------------|----------------|---------------|
+| MySQL | ✓ SQL syntax, mysql_fetch | ✓ SLEEP() | ✓ Completo |
+| MSSQL | ✓ Unclosed quotation, OLE DB | ✓ WAITFOR DELAY | ✓ Completo |
+| PostgreSQL | ✓ PostgreSQL ERROR, pg_* | ✓ pg_sleep() | ✓ Completo |
+| Oracle | ✓ ORA-* | ✓ DBMS_LOCK.SLEEP | ✓ Completo |
+| SQLite | ✓ SQLite error | ✗ | ✓ Básico |
 
-# SETUP - INSTALLATION
-The script relies on several external libraries for HTTP handling, HTML parsing, and terminal coloring. Install the requirements using the following command:
+##  Instalação
 
+### Pré-requisitos
 
-pip install requests beautifulsoup4 colorama urllib3
-SETUP - EXECUTION (USAGE)
-The tool uses a Command Line Interface (CLI). You can pass the target URL and optional parameters directly through the terminal.
+- Python 3.6 ou superior
+- pip (gerenciador de pacotes Python)
 
-Basic Usage:
+### Passos de Instalação
 
-python sql_tester.py http://example.com/page.php?id=1
-Advanced Usage (with session cookies and delay):
-
-python sql_tester.py http://example.com/target --cookie "PHPSESSID=12345" --delay 2
-Arguments:
-
-url: The target address to scan.
-
---cookie: (Optional) Provide a session cookie for testing pages behind a login.
-
---delay: (Optional) Set the time in seconds between requests to avoid triggering security blocks. Default is 1 second.
-
---timeout: (Optional) Set the maximum wait time for server responses.
-
-# CORE FUNCTIONALITIES
-Parameter Auto-Detection: The script automatically extracts parameters from the URL query string and scans HTML forms (<input> and <textarea>) for potential injection points.
-
-Error-Based Detection: Scans for specific database error signatures (MySQL, MSSQL, PostgreSQL, Oracle, SQLite) triggered by malicious payloads.
-
-Time-Based Blind SQLi: Measures server response latency to detect if "SLEEP" or "WAITFOR" commands are being executed by the database.
-
-Union-Based Testing: Attempts to determine the number of columns and extract database metadata.
-
-Automated Reporting: Generates a detailed text file report (sql_injection_report_[timestamp].txt) containing all vulnerable parameters, payloads used, and evidence found.
-
-# LIMITATIONS
-False Positives: High server load can mimic Time-Based injection. Manual verification is recommended.
-
-Sanitization: The tool may not bypass sophisticated Web Application Firewalls (WAF) or modern prepared statements.
-
-Database Extraction: The version-gathering and table-extraction features are modular and may require manual payload adjustment depending on the database environment.
-
-# OUTPUT DATA
-The tool provides color-coded terminal output:
-
-Blue [*]: Informational messages and detection progress.
-
-Green [+]: Successful discovery of parameters or saved reports.
-
-Red [!]: Confirmed vulnerability detection.
-
-Yellow [-]: Errors or connectivity issues
+1. **Clone o repositório**
+```bash
+git clone https://github.com/seu-usuario/sql-injection-tester.git
+cd sql-injection-tester
