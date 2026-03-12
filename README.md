@@ -1,45 +1,46 @@
-#  Simple Sqli Tester
+
+
+#  Specialized SQL Injection Testing Tool
 
 [![Python Version](https://img.shields.io/badge/python-3.6%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)](CONTRIBUTING.md)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/seu-usuario/sql-injection-tester/graphs/commit-activity)
 
-Uma ferramenta especializada em testar vulnerabilidades de SQL Injection, desenvolvida para fins educacionais e testes de penetração autorizados.
+A specialized tool for testing SQL Injection vulnerabilities, developed for educational purposes and authorized penetration testing.
 
-##  Sobre o Projeto
+##  About The Project
 
-O SQL Injection Tester é uma ferramenta focada exclusivamente na deteção e exploração de vulnerabilidades de injeção SQL. Inspirada em ferramentas profissionais como sqlmap, esta ferramenta foi desenvolvida para ser **educacional, precisa e fácil de usar**, permitindo compreender profundamente como diferentes tipos de SQL Injection funcionam.
+The SQL Injection Tester is a tool focused exclusively on detecting and exploiting SQL injection vulnerabilities. Inspired by professional tools like sqlmap, this tool was developed to be **educational, precise, and easy to use**, allowing deep understanding of how different types of SQL Injection work.
 
-###  Funcionalidades Principais
+###  Main Features
 
-| Tipo | Descrição | Características |
-|------|-----------|-----------------|
-|  **Error-Based** | Deteção baseada em mensagens de erro da base de dados | Suporte para MySQL, MSSQL, PostgreSQL, Oracle, SQLite |
-|  **Time-Based Blind** | Injeção cega baseada em delays | Testes com SLEEP(), WAITFOR DELAY, pg_sleep() |
-|  **Union-Based** | Extração de dados usando UNION | Descoberta de colunas, extração de versão e tabelas |
-|  **Boolean-Based Blind** | Injeção cega baseada em verdadeiro/falso | Testes condicionais com AND/OR |
+| Type | Description | Support |
+|------|-------------|---------|
+|  **Error-Based** | Detection based on database error messages | MySQL, MSSQL, PostgreSQL, Oracle, SQLite |
+|  **Time-Based Blind** | Blind injection based on delays | SLEEP(), WAITFOR DELAY, pg_sleep() |
+|  **Union-Based** | Data extraction using UNION | Column discovery, version and table extraction |
+|  **Boolean-Based Blind** | Blind injection based on true/false | Conditional tests with AND/OR |
 
-###  Bases de Dados Suportadas
+###  Supported Databases
 
 | Database | Error Patterns | Time Functions | Union Support |
 |----------|---------------|----------------|---------------|
-| MySQL | ✓ SQL syntax, mysql_fetch | ✓ SLEEP() | ✓ Completo |
-| MSSQL | ✓ Unclosed quotation, OLE DB | ✓ WAITFOR DELAY | ✓ Completo |
-| PostgreSQL | ✓ PostgreSQL ERROR, pg_* | ✓ pg_sleep() | ✓ Completo |
-| Oracle | ✓ ORA-* | ✓ DBMS_LOCK.SLEEP | ✓ Completo |
-| SQLite | ✓ SQLite error | ✗ | ✓ Básico |
+| MySQL | ✓ SQL syntax, mysql_fetch | ✓ SLEEP() | ✓ Full |
+| MSSQL | ✓ Unclosed quotation, OLE DB | ✓ WAITFOR DELAY | ✓ Full |
+| PostgreSQL | ✓ PostgreSQL ERROR, pg_* | ✓ pg_sleep() | ✓ Full |
+| Oracle | ✓ ORA-* | ✓ DBMS_LOCK.SLEEP | ✓ Full |
+| SQLite | ✓ SQLite error | ✗ | ✓ Basic |
 
-##  Instalação
+##  Installation
 
-### Pré-requisitos
+### Prerequisites
 
-- Python 3.6 ou superior
-- pip (gerenciador de pacotes Python)
+- Python 3.6 or higher
+- pip (Python package manager)
 
-### Passos de Instalação
+### Installation Steps
 
-1. **Clone o repositório**
+1. **Clone the repository**
 ```bash
-git clone https://github.com/seu-usuario/sql-injection-tester.git
+git clone https://github.com/your-username/sql-injection-tester.git
 cd sql-injection-tester
