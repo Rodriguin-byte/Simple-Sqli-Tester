@@ -10,7 +10,7 @@ Uma ferramenta especializada e automatizada escrita em Python para identificar v
 
 ---
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 
 * **Deteção Automática de Parâmetros:** Analisa URLs à procura de parâmetros (`?param=val`) e faz *parsing* de formulários HTML (usando BeautifulSoup) para extrair campos de input e textarea.
 * **Múltiplos Vetores de Teste:**
