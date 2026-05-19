@@ -32,8 +32,6 @@ Antes de executar a ferramenta, garante que tens o Python 3 instalado e as depen
 ```bash
 pip install requests beautifulsoup4 colorama
 
----
+Como usar
 
-## Como Usar
-```bash
 python3 sql_tester.py <URL do Alvo>
