@@ -1,7 +1,6 @@
 # Specialized SQL Injection Testing Tool
 
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 Uma ferramenta especializada e automatizada escrita em Python para identificar vulnerabilidades de **SQL Injection (SQLi)** em aplicações web. O script analisa automaticamente os parâmetros de URLs e formulários HTML, testando-os contra diversas técnicas de injeção.
 
@@ -32,3 +31,9 @@ Antes de executar a ferramenta, garante que tens o Python 3 instalado e as depen
 
 ```bash
 pip install requests beautifulsoup4 colorama
+
+---
+
+## Como Usar
+```bash
+python3 sql_tester.py <URL do Alvo>
